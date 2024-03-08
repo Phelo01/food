@@ -16,6 +16,8 @@ const show = function(recipe){
 console.log('xeno elewa')
 console.log('testing git');
 
+console.log('new-features');
+
 const pizzaRecipe = async function () {
     try {
         const id = window.location.hash.slice(1);

@@ -44,23 +44,39 @@ const pizzaRecipe = async function () {
     };
 };
 
-const searchRecipe = async function (query) {
-    const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${query}`);
-    const info = await res.json();
-    if (!res.ok) throw new Error('not found');
-    console.log(info.data.recipes)
-}
+// const searchRecipe = async function (query) {
+//     const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${query}`);
+//     const info = await res.json();
+//     if (!res.ok) throw new Error('not found');
+//     console.log(info.data.recipes)
+// }
 
 
-document.querySelector('.search').addEventListener('submit', function(e){
-    e.preventDefault();
-    // alert('phelo loves omoge');
-    const query = document.querySelector('.search_input').value;
-    if (!query) return;
-    searchRecipe(query);
-})
+// document.querySelector('.search').addEventListener('submit', function(e){
+//     e.preventDefault();
+//     // alert('phelo loves omoge');
+//     const query = document.querySelector('.search_input').value;
+//     if (!query) return;
+//     searchRecipe(query);
+// })
 
 window.addEventListener('hashchange', pizzaRecipe)
 window.addEventListener('load', pizzaRecipe)
 
 
+const cancel = document.querySelector('.la-times')
+const nav = document.querySelector('.nav-open')
+const sho = document.querySelector('.la-bars')
+
+cancel.addEventListener("click", function(e){
+    e.preventDefault()
+    // console.log('hello');
+    nav.style.display = 'none';
+    nav.style.transition ='inherit'
+    sho.style.visibility = 'visible'
+})
+
+sho.addEventListener('click', function(){
+    nav.style.display = 'flex'
+    nav.style.transition = 'inherit'
+})

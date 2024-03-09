@@ -8,6 +8,12 @@
         gap: 4rem;
     }
 
+    .la-bars{
+        visibility: visible;
+        display: block;
+        font-size: 2rem;
+    }
+
 }
 
 
@@ -18,30 +24,48 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        transform: translate(100%);
+        /* transform: translate(100%); */
         display: flex;
         flex-direction: column;
         background-color: rgba(255, 255, 255, 0.93);
-        transform: translateX(100%);
+        /* transform: translateX(100%); */
         transition: all 1s ease-in;
+        /* display: none; */
 
         opacity: 1;
-        pointer-events: none;
-        visibility: hidden;
+        /* pointer-events: none; */
+        /* visibility: hidden; */
+        z-index: 999;
     }
 
     .nav-list{
         flex-direction: column;
         align-items: center;
         gap: 3rem;
-        margin-top: 20rem;
+        z-index: 998;
+        /* background-color: whitesmoke; */
+        /* margin-top: 20rem; */
     }
 
     .nav-open .nav-list{
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
-        transform: translateX(0);
+        /* transform: translateX(0); */
+    }
+
+    .la-bars{
+        visibility: visible;
+        font-size: 3rem;
+    }
+
+    .la-times{
+        visibility: visible;
+        font-size: 3rem;
+    }
+
+    .gridy{
+        z-index: 997;
     }
 }
 
@@ -50,8 +74,35 @@
         font-size: 41%;
     }
 
+    .nav-open{
+        background-color: white;
+        z-index: 999;
+        opacity: 1;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+    }
+
     .gridy{
         grid-template-columns: 1fr;
         gap: 20rem;
+        z-index: 998;
+    }
+    .text-box{
+        z-index: 997;
+    }
+
+    .la-bars{
+        visibility: hidden;
+    }
+
+    .mine{
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .la-times{
+        visibility: visible;
     }
 }
